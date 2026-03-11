@@ -3,8 +3,7 @@ trait SayHi { fn hi(self); }
 trait SayHello { fn hi(self); }
 trait Hello { fn hi(self); }
 
-fn _stuff<'a,T>(value: &'a mut T)
-    where T:SayHi
+fn _stuff<'a,T>(value: &'a T)
 {
     value.hi(); 
 }
