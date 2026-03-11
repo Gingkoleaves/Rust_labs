@@ -14,7 +14,7 @@ fn _stuff<'a,T>(value: &'a T)
 struct MyType{}
 
 impl MyType{
-    fn hi(self){
+    fn hi(&self){
         println!("hi from struct");
     }
 }
