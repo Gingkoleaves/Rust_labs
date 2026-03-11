@@ -1,5 +1,5 @@
 
-trait SayHi { fn hi(&self); }
+trait SayHi { fn hi(self); }
 trait SayHello { fn hi(self); }
 trait Hello { fn hi(self); }
 
@@ -14,7 +14,7 @@ fn _stuff<'a,T>(value: &'a T)
 struct MyType{}
 
 impl MyType{
-    fn hi(&mut self){
+    fn hi(self){
         println!("hi from struct");
     }
 }
@@ -35,7 +35,7 @@ impl &mut MyType{
 */
 
 impl SayHi for MyType{
-    fn hi(&self) {
+    fn hi(self) {
         println!("hi from SayHi");
     }
 
@@ -66,9 +66,9 @@ fn _print_type_of<T>(_: &T) {
 }
 
 fn main() {
-    let mut var=MyType{};
+    let var=MyType{};
     // _stuff(&var);
-    (& var).hi();
+    var.hi();
 }
 
 
