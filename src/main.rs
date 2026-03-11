@@ -3,9 +3,8 @@ trait SayHi { fn hi(self); }
 trait SayHello { fn hi(self); }
 trait Hello { fn hi(self); }
 
-fn _stuff<'a,T>(value: &'a T)
+fn _stuff<'a,T>(value: &'a mut T)
     where   &'a mut T:SayHello,
-            &'a T :Hello,
             T:SayHi
 {
     value.hi(); 
@@ -66,8 +65,8 @@ fn _print_type_of<T>(_: &T) {
 }
 
 fn main() {
-    let var=MyType{};
-    _stuff(&var);
+    let mut var=MyType{};
+    _stuff(&mut var);
     (&var).hi();
 }
 
