@@ -68,7 +68,7 @@ fn _print_type_of<T>(_: &T) {
 fn main() {
     let var=MyType{};
     // _stuff(&var);
-    var.hi();
+    (&var).hi();
 }
 
 
